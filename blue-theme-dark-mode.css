@@ -1,15 +1,15 @@
 /*
 Blue theme dark-mode
 https://github.com/SiriusXT/trilium-theme-blue
-dark-mode version:0.10 for trilium-NEXT:>=0.92.4
+dark-mode version:0.11 for trilium-NEXT:>=0.92.4
 */
 :root {
   --theme-style: dark;
-  --main-background-color: #1E1E1E;
-  --main-text-color:#E6E6E6; /*#d4d4d4;*/
-  --main-border-color: #333333;
-  --second-border-color: #595959;
-  --bs-border-color: #333333;
+  --main-background-color: #262e33 !important;/*文本面板背景颜色*/
+  --main-text-color:#d3d3d3 !important; /*#d4d4d4;*/
+  --main-border-color: /*#333333*/#60778d !important;/*分割线颜色*/
+  --second-border-color: #595959 !important;
+  --bs-border-color: #333333 !important;
     
   --accented-background-color: rgb(40,40,40);
   /*rgb(51, 51, 51);*/
@@ -45,8 +45,8 @@ dark-mode version:0.10 for trilium-NEXT:>=0.92.4
   --modal-background-color: #333;
   --modal-backdrop-color: #444;
 
-  --left-pane-background-color: #252526;
-  --left-pane-text-color: #AAAAAA;
+  --left-pane-background-color: #093e4b !important; /*左侧目录和上边栏颜色*/
+  --left-pane-text-color: #AAAAAA !important;/*左侧目录默认字体颜色*/
 
   --launcher-pane-background-color: #333333;
   --launcher-pane-text-color: rgba(255, 255, 255, 0.4);
@@ -54,7 +54,7 @@ dark-mode version:0.10 for trilium-NEXT:>=0.92.4
   --link-color: #4682B4;
 
   --mermaid-theme: dark;
-  --ck-color-code-block-label-background: #333;
+  --ck-color-code-block-label-background: #296153;
   --right-pane-li-hover-background: rgb(46, 46, 46);
 
   --h2-background-color: rgb(105 154 187 / 50%);
@@ -66,6 +66,12 @@ dark-mode version:0.10 for trilium-NEXT:>=0.92.4
   --ck-color-selector-focused-cell-background: #1E1E1E;
   --ck-color-focus-border: #bfbfbf !important;
   --dropdown-border-color: var(--second-border-color);
+}
+
+/*Temporary whitespace fixes | 临时修复空格问题*/
+/*Apply only to p and not to any sub elements within p*/
+.note-split.type-text p > * {
+    text-indent: 0;
 }
 
 body ::-webkit-calendar-picker-indicator {
@@ -88,111 +94,111 @@ div#launcher-pane .global-menu-button {
   filter: invert(0.5);
 }
 
-div.tree:not(.fancytree-ext-filter.fancytree-ext-filter-hide) li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n) {
+div.tree li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n) {
   border-left: 3px solid #f4a6a670;
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important;
 }
 
-div.tree:not(.fancytree-ext-filter.fancytree-ext-filter-hide) li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+1) {
+div.tree li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+1) {
   border-left: 3px solid #99d0df70;
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important;
 }
 
-div.tree:not(.fancytree-ext-filter.fancytree-ext-filter-hide) li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+2) {
+div.tree li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+2) {
   border-left: 3px solid #b4afdf70;
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important;
 }
 
-div.tree:not(.fancytree-ext-filter.fancytree-ext-filter-hide) li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+3) {
+div.tree li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+3) {
   border-left: 3px solid #abd58b70;
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important;
 }
 
-div.tree:not(.fancytree-ext-filter.fancytree-ext-filter-hide) li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+4) {
+div.tree li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+4) {
   border-left: 3px solid #f3d27570;
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important;
 }
 
-div.tree:not(.fancytree-ext-filter.fancytree-ext-filter-hide) li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+5) {
+div.tree li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+5) {
   border-left: 3px solid #bccdf170;
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important;
 }
 
 li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n):hover {
-  background-color: #f4a6a607 !important;
+  background-color: #f4a6a602 !important;
 }
 
 li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+1):hover {
-  background-color: #99d0df07 !important;
+  background-color: #99d0df02 !important;
 }
 
 li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+2):hover {
-  background-color: #b4afdf07 !important;
+  background-color: #b4afdf02 !important;
 }
 
 li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+3):hover {
-  background-color: #abd58b07 !important;
+  background-color: #abd58b02 !important;
 }
 
 li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+4):hover {
-  background-color: #f3d27507 !important;
+  background-color: #f3d27502 !important;
 }
 
 li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+5):hover {
-  background-color: #bccdf107 !important;
+  background-color: #bccdf102 !important;
 }
 
 li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n)>span.fancytree-node:hover {
-  background-color: #f4a6a607 !important;
+  background-color: #f4a6a602 !important;
 }
 
 li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+1)>span.fancytree-node:hover {
-  background-color: #99d0df07 !important;
+  background-color: #99d0df02 !important;
 }
 
 li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+2)>span.fancytree-node:hover {
-  background-color: #b4afdf07 !important;
+  background-color: #b4afdf02 !important;
 }
 
 li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+3)>span.fancytree-node:hover {
-  background-color: #abd58b07 !important;
+  background-color: #abd58b02 !important;
 }
 
 li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+4)>span.fancytree-node:hover {
-  background-color: #f3d27507 !important;
+  background-color: #f3d27502 !important;
 }
 
 li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+5)>span.fancytree-node:hover {
-  background-color: #bccdf107 !important;
+  background-color: #bccdf102 !important;
 }
 
-li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n)>span.fancytree-node.fancytree-active {
+#left-pane li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n)>span.fancytree-node.fancytree-active {
   background-color: #f4a6a610 !important;
 }
 
-li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+1)>span.fancytree-node.fancytree-active {
+#left-pane li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+1)>span.fancytree-node.fancytree-active {
   background-color: #99d0df10 !important;
 }
 
-li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+2)>span.fancytree-node.fancytree-active {
-  background-color: #b4afdf10 !important;
+#left-pane li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+2)>span.fancytree-node.fancytree-active {
+  background-color: #b4afdf01 !important;
 }
 
-li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+3)>span.fancytree-node.fancytree-active {
+#left-pane li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+3)>span.fancytree-node.fancytree-active {
   background-color: #abd58b10 !important;
 }
 
-li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+4)>span.fancytree-node.fancytree-active {
+#left-pane li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+4)>span.fancytree-node.fancytree-active {
   background-color: #f3d27510 !important;
 }
 
-li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+5)>span.fancytree-node.fancytree-active {
+#left-pane li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+5)>span.fancytree-node.fancytree-active {
   background-color: #bccdf110 !important;
 }
 
@@ -208,7 +214,6 @@ div.note-split.type-text h1 {
   border-left: 9px solid rgba(0, 0, 0, 1);
   border-bottom: 1px solid rgba(0, 0, 0, 1);
 }
-
 
 div.note-split.type-text h2:not(div.note-list-widget h2) {
   background: var(--h2-background-color);
@@ -319,12 +324,22 @@ span.fancytree-node:not(.fancytree-folder) .fancytree-expander::before {
     opacity: 0.1;
 }
 
-.note-split.type-text p {
-    margin-top: 0.5rem !important;
+.note-split.type-text .note-detail > div > div > p {
+    margin-top: 0.5rem !impor tant;
     margin-bottom: 0.5rem !important;
     text-indent: 2em; /* first-line indent */
     text-align: justify; /* Align both ends */
 }
+
+/*被上面的代码块替代，用来修复美人鱼图错误
+// Replaced by the code block above, which was used to fix the mermaid diagram error
+.note-split.type-text p {
+margin-top: 0.5rem !impor tant;
+margin-bottom: 0.5rem !important;
+text-indent: 2em; /* first-line indent /
+text-align: justify; / Align both ends */
+}
+*/
 
 /*Make the notes title box not displaying focus animation*/
 input.note-title:focus{

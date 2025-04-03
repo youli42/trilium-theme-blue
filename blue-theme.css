@@ -72,6 +72,12 @@ Version:0.10 for trilium-NEXT:>=0.92.4
    --h6-background-color:rgb(197 197 197);
  }
 
+/*Temporary whitespace fixes | 临时修复空格问题*/
+/*Apply only to p and not to any sub elements within p*/
+.note-split.type-text p > * {
+   text-indent: 0;
+}
+
 /*left panel wallpaper*/
 #left-pane.component {
    background-image: url("../../../custom/background.png");
@@ -87,37 +93,37 @@ div.tree-actions button.tree-floating-button{
    background-color:#fefefe !important;
 }
 
-div.tree:not(.fancytree-ext-filter.fancytree-ext-filter-hide) li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n) {
+div.tree li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n) {
    border-left: 4px solid #f4a6a6 ;
    border-top-left-radius: 10px !important;
    border-bottom-left-radius: 10px !important;
 }
 
-div.tree:not(.fancytree-ext-filter.fancytree-ext-filter-hide) li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+1) {
+div.tree li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+1) {
    border-left: 4px solid #99d0df;
    border-top-left-radius: 10px !important;
    border-bottom-left-radius: 10px !important;
 }
 
-div.tree:not(.fancytree-ext-filter.fancytree-ext-filter-hide) li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+2) {
+div.tree li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+2) {
    border-left: 4px solid #b4afdf ;
    border-top-left-radius: 10px !important;
    border-bottom-left-radius: 10px !important;
 }
 
-div.tree:not(.fancytree-ext-filter.fancytree-ext-filter-hide) li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+3) {
+div.tree li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+3) {
    border-left: 4px solid #abd58b ;
    border-top-left-radius: 10px !important;
    border-bottom-left-radius: 10px !important;
 }
 
-div.tree:not(.fancytree-ext-filter.fancytree-ext-filter-hide) li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+4) {
+div.tree li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+4) {
    border-left: 4px solid #f3d275 ;
    border-top-left-radius: 10px !important;
    border-bottom-left-radius: 10px !important;
 }
 
-div.tree:not(.fancytree-ext-filter.fancytree-ext-filter-hide)  li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+5) {
+div.tree  li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+5) {
    border-left: 4px solid #bccdf1;
    border-top-left-radius: 10px !important;
    border-bottom-left-radius: 10px !important;
@@ -308,12 +314,22 @@ span.fancytree-node:not(.fancytree-folder) .fancytree-expander::before {
    opacity: 0.1;
 }
 
-.note-split.type-text p {
-   margin-top: 0.5rem !important;
+.note-split.type-text .note-detail > div > div > p {
+   margin-top: 0.5rem !impor tant;
    margin-bottom: 0.5rem !important;
    text-indent: 2em; /* first-line indent */
    text-align: justify; /* Align both ends */
 }
+
+/*被上面的代码块替代，用来修复美人鱼图错误
+// Replaced by the code block above, which was used to fix the mermaid diagram error
+.note-split.type-text p {
+margin-top: 0.5rem !impor tant;
+margin-bottom: 0.5rem !important;
+text-indent: 2em; /* first-line indent /
+text-align: justify; / Align both ends */
+}
+*/
 
 /*Make the notes title box not displaying focus animation*/
 input.note-title:focus{
