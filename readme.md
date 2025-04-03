@@ -1,48 +1,27 @@
-## [Blue-theme](https://github.com/SiriusXT/trilium-theme-blue)
+**Both updates and fixes come from the [Blue-theme](https://github.com/SiriusXT/trilium-theme-blue), this is just a temporary update and some minor adjustments**
+
+**更新和修复均来自 [Blue-theme](https://github.com/SiriusXT/trilium-theme-blue)，这里是临时更新和一些微调**
+
+# [Blue-theme](https://github.com/SiriusXT/trilium-theme-blue)
+
+Version:0.10 For trilium-NEXT:>=0.92.4 Dark-mode-img-color-conversion.js version:0.10
+
+版本：0.10 适用于 trilium-NEXT：>=0.92.4 暗黑模式图片颜色转换.js 版本：0.10
 
 ## Updated 
-1. Version:0.10 For trilium-NEXT:>=0.92.4
-   Dark-mode-img-color-conversion.js version:0.10
 
->> **Important**:
- Currently, the TriliumNext theme has been set as the base theme. The **blue theme** needs to be assigned the tag `#appTheme=blue-theme-light #appThemeBase=next-light`, and the **blue-theme-dark** needs `#appTheme=blue-theme-dark #appThemeBase=next-dark`.  
- Alternatively, you can directly import `blue-theme.zip` from **Releases**, which includes `blue-theme.css`, `blue-theme-dark-theme.css`, and `Dark-mode-img-color-conversion.js`.
+### fix | 修复
 
+1. [外部链接和内部链接均会出现奇怪的空格](https://github.com/SiriusXT/trilium-theme-blue/issues/19)
+2. [美人鱼图中出现奇怪的空格](https://github.com/SiriusXT/trilium-theme-blue/issues/20)
+3. [提升笔记后，目录树格式出错](https://github.com/SiriusXT/trilium-theme-blue/issues/18)
 
-2. Optional: Change the font to `SourceHanSansSC`.
-    The default font is relatively thin, and `SourceHanSansSC` is thicker, which is easier to browse.    
-    Configuration method: import note `font-style.zip` directly.( See the screenshot at the end.)
-3. New heading and TOC style
-   ![](./img/heading.png)
-4. Added blue-theme-dark-mode.css.
-   **If you use the dark mode theme, you can use the 'Dark-mode-img-color-conversion.js' script to invert the color of the white image to fit the dark mode.** Remember to give Dark-mode-img-color-conversion.js Script to add #widget tag. *You can add the **#disableAdjustImage** tag to the note if you don’t want the color of a certain note image to be inverted.*
+这里只是套用了原作者的临时修复方案，没什么实质性贡献
 
+### 微调
 
-## Features
+1. 调亮暗色模式的背景颜色，使文字不这么刺眼
+2. 更改左侧目录树和顶部的背景颜色，更蓝
+3. 暗色模式中添加少量中文注释，方便修改
 
-1. Blue Theme 
-2. **More compact**, line spacing, paragraph spacing, etc. 
-3. Indent the first line and align both ends. 
-4. The directory tree mouse displays the background color when hovering to highlight the selected folder.
-5. Tree style.
-6. **Title style of H1, H2, H3 and H4 . **
-7. More obvious scroll bar.
-8. Expand the background image of the tree. 
-9. Other changes.
-
-## Usage
-
-1. Create a CSS code note in Trilium and name it `Blue-theme`
-2. Paste the content from `Blue-theme.css` in it
-3. Add the `#appTheme=Blue-theme` attribute to it
-4. Download the `background.png` , then right-click on the note and select Import to note
-5. Add the attribute `#originalFileName=background.png #customResourceProvider=background.png` to `background.png`
-6. Go to Menu > Options, and select Blue-theme as your new theme
-7. Ctrl + R to reload
-
-## Tips
-
-Using the shortcut key `enter`is to create a new paragraph, and this method will automatically indent the first line; using the shortcut key `enter+shift` is a line break, and this method will not indent the first line.
-
-![](./img/screenshot1.png)
-![](./img/screenshot2.png)
+![效果展示](./img/show.png)
