@@ -1,17 +1,19 @@
 /*
 Blue theme dark-mode
 https://github.com/SiriusXT/trilium-theme-blue
-dark-mode version:0.11 for trilium-NEXT:>=0.92.4
+dark-mode version:0.14 for trilium-NEXT:>=0.95.0
 */
-:root {
+body {
   --theme-style: dark;
   --main-background-color: #262e33 !important;/*文本面板背景颜色*/
   --main-text-color:#d3d3d3 !important; /*#d4d4d4;*/
   --main-border-color: /*#333333*/#60778d !important;/*分割线颜色*/
   --second-border-color: #595959 !important;
   --bs-border-color: #333333 !important;
-    
-  --accented-background-color: rgb(40,40,40);
+  --gutter-color: #222;
+    /*selection unfocus*/
+    /*选择取消焦点*/
+  --accented-background-color: rgb(50,50,50) !important;
   /*rgb(51, 51, 51);*/
   --more-accented-background-color: #333;
 
@@ -66,12 +68,29 @@ dark-mode version:0.11 for trilium-NEXT:>=0.92.4
   --ck-color-selector-focused-cell-background: #1E1E1E;
   --ck-color-focus-border: #bfbfbf !important;
   --dropdown-border-color: var(--second-border-color);
-}
-
-/*Temporary whitespace fixes | 临时修复空格问题*/
-/*Apply only to p and not to any sub elements within p*/
-.note-split.type-text p > * {
-    text-indent: 0;
+    
+    --ck-blockquote-border-color: var(--main-border-color);
+    --ck-blockquote-background-color: var(--left-pane-background-color);
+    
+    /*from next for mobile*/
+    /* 从下一个开始，对于移动设备 */
+    --new-tab-button-background: #fff0;
+    --new-tab-button-color: #ffffff96;
+    --new-tab-button-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    --new-tab-button-hover-background: #fff3;
+    --new-tab-button-hover-color: white;
+    --tab-close-button-hover-background: #a45353;
+    --tab-close-button-hover-color: white;
+    --active-tab-background-color: #ffffff1c;
+    --active-tab-hover-background-color: var(--active-tab-background-color);
+    --active-tab-text-color: #ffffffcd;
+    --active-tab-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2), -1px -1px 3px rgba(0, 0, 0, 0.4);
+    --active-tab-dragging-shadow: var(--active-tab-shadow), 0 0 20px rgba(0, 0, 0, 0.4);
+    --inactive-tab-background-color: transparent;
+    --inactive-tab-hover-background-color: #ffffff0f;
+    --inactive-tab-text-color: #7c7c7c;
+    
+    --launcher-pane-vert-icon-size: 130%;
 }
 
 body ::-webkit-calendar-picker-indicator {
@@ -100,37 +119,37 @@ div#launcher-pane .global-menu-button {
 }
 
 div.tree li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n) {
-  border-left: 3px solid #f4a6a670;
+  border-left: 2px solid #f4a6a670;
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important;
 }
 
 div.tree li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+1) {
-  border-left: 3px solid #99d0df70;
+  border-left: 2px solid #99d0df70;
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important;
 }
 
 div.tree li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+2) {
-  border-left: 3px solid #b4afdf70;
+  border-left: 2px solid #b4afdf70;
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important;
 }
 
 div.tree li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+3) {
-  border-left: 3px solid #abd58b70;
+  border-left: 2px solid #abd58b70;
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important;
 }
 
 div.tree li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+4) {
-  border-left: 3px solid #f3d27570;
+  border-left: 2px solid #f3d27570;
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important;
 }
 
 div.tree li.fancytree-lastsib ul li[role='treeitem']:nth-of-type(6n+5) {
-  border-left: 3px solid #bccdf170;
+  border-left: 2px solid #bccdf170;
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important;
 }
@@ -220,42 +239,42 @@ div.note-split.type-text h1 {
   border-bottom: 1px solid rgba(0, 0, 0, 1);
 }
 
-div.note-split.type-text h2:not(div.note-list-widget h2) {
+.note-detail-editable-text h2:not(div.note-list-widget h2), .note-detail-readonly-text h2:not(div.note-list-widget h2) {
   background: var(--h2-background-color);
   border-radius: 6px 6px 6px 6px;
   padding: 5px 10px 2px 10px;
   text-shadow: 2px 2px 3px var(--main-background-color);
 }
 
-div.note-split.type-text h3:not(div.note-list-widget h3) {
+.note-detail-editable-text h3:not(div.note-list-widget h3), .note-detail-readonly-text h3:not(div.note-list-widget h3) {
   background: var(--h3-background-color);
   border-radius: 6px 6px 6px 6px;
   padding: 4px 10px 2px 10px;
   text-shadow: 2px 2px 3px var(--main-background-color);
 }
 
-div.note-split.type-text h4:not(div.note-list-widget h4) {
+.note-detail-editable-text h4:not(div.note-list-widget h4), .note-detail-readonly-text h4:not(div.note-list-widget h4) {
   background: var(--h4-background-color);
   border-radius: 6px 6px 6px 6px;
   padding: 3px 10px 2px 10px;
   text-shadow: 2px 2px 3px var(--main-background-color);
 }
 
-div.note-split.type-text h5:not(.note-book-header):not(div.note-list-widget h5) {
+.note-detail-editable-text h5:not(.note-book-header):not(div.note-list-widget h5), .note-detail-readonly-text h5:not(div.note-list-widget h5) {
   background: var(--h5-background-color);
   border-radius: 6px 6px 6px 6px;
   padding: 2px 10px 2px 10px;
   text-shadow: 2px 2px 3px var(--main-background-color);
 }
 
-div.note-split.type-text h6:not(div.note-list-widget h6) {
+.note-detail-editable-text h6:not(div.note-list-widget h6), .note-detail-readonly-text h6:not(div.note-list-widget h6) {
   background: var(--h6-background-color);
   border-radius: 6px 6px 6px 6px;
   padding: 1px 10px 2px 10px;
   text-shadow: 2px 2px 3px var(--main-background-color);
 }
 
-div.component.note-split.type-text h1,
+div.note-split.type-text h1,
 h2,
 h3,
 h4,
@@ -286,21 +305,27 @@ div.toc-widget span.toc>ol>ol>ol>ol>ol>li {
   color: var(--h6-background-color);
 }
 
-div.toc-widget .toc ol {
-  padding-left: 15px;
-}
-
 ::-webkit-scrollbar-thumb {
   background-color: #222 !important;
+  border-color: #333 !important;
 }
+
+::selection {
+    background-color: #38557960;
+}
+
+
+
 
 
 /*
 	The following are the common parts for both black and light themes
+  以下是黑色和浅色主题的共同部分
 */
 
 /*Make the notification in the bottom right*/
-div#toast-container {
+/*在右下角发出通知*/
+#toast-container {
     right: 10px !important;
     bottom: 10px !important;
     top: auto !important;
@@ -308,43 +333,114 @@ div#toast-container {
 }
 
 /* Launcher-pane vertical centered */
-#launcher-pane{
+/* 启动器窗格垂直居中 */
+#launcher-pane.vertical{
     align-items: center; 
-    border-right: none !important;
 }
 
-.global-menu-button{
+#launcher-pane.vertical .launcher-button, #launcher-pane.vertical .dropdown{
+	width:37px !important;
+  height:37px !important;
+  margin-right: 1px;
+  margin-left: 1px;
+}
+
+#launcher-pane.vertical{
+    border-right: unset !important;
+}
+#launcher-pane.vertical #launcher-container {
+    width: 100%;
+    scrollbar-width: none; /*Avoid firefox scrollbar blocking*/
+}
+
+#launcher-pane.vertical .icon-action.global-menu-button{
     padding-top: 0px !important;
+    margin-top: 3px !important;
+    font-size: 1em !important;
 }
-
-div#launcher-pane.component {
+#launcher-pane.vertical .icon-action.global-menu-button .global-menu-button-update-available {
+	top: 17px;
+    left: 21px;
+}
+#launcher-pane .sync-status-disconnected-with-changes {
+    animation: unset !important;
+}
+/*
+#launcher-pane.vertical {
     width: 40px !important;
+}*/
+
+.tree {
+	padding-right: 0px !important;
+}
+#left-pane div.tree {
+    padding-left: 0 !important;
+}
+/* Let the tree of options not display the left border */
+.tree .fancytree-submatch:not(.fancytree-match) + ul > li {
+  border-left: 0px !important;
 }
 
 /*Left fold arrow*/
+/* 左折叠箭头 */
 span.fancytree-node:not(.fancytree-folder) .fancytree-expander::before {
     content: "\ec21" !important;
     visibility: visible !important;
     color: var(--left-pane-text-color) !important;
-    opacity: 0.1;
+    opacity: 0.2;
 }
 
-.note-split.type-text .note-detail > div > div > p {
-    margin-top: 0.5rem !impor tant;
+/* title input */
+/* 标题输入 */
+input:not([type]):focus, input[type="text"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="time"]:focus, input[type="datetime-local"]:focus, textarea.form-control:focus, textarea:focus, .tn-input-field:focus, .tn-input-field:focus-within {
+	outline: 0px solid var(--input-focus-outline-color) !important;
+}
+input:not([type]):focus, input[type="text"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="time"]:focus, input[type="datetime-local"]:focus, textarea.form-control:focus, textarea:focus, .tn-input-field:focus, .tn-input-field:focus-within {
+	transition: none !important;
+}
+
+.note-split.type-text .note-detail > div > div > p, blockquote > p {
+    margin-top: 0.5rem !important;
     margin-bottom: 0.5rem !important;
     text-indent: 2em; /* first-line indent */
     text-align: justify; /* Align both ends */
 }
 
-/*被上面的代码块替代，用来修复美人鱼图错误
-// Replaced by the code block above, which was used to fix the mermaid diagram error
-.note-split.type-text p {
-margin-top: 0.5rem !impor tant;
-margin-bottom: 0.5rem !important;
-text-indent: 2em; /* first-line indent /
-text-align: justify; / Align both ends */
+/*Apply only to p and not to any sub elements within p*/
+/* 仅适用于p，不适用于p中的任何子元素 */
+.note-split.type-text p > * {
+    text-indent: 0;
 }
-*/
+
+div.ck-content blockquote {
+	font-size:90% !important;
+    border: unset !important;
+    border-left: 5px solid var(--ck-blockquote-border-color) !important;
+    box-shadow: unset !important;
+    border-radius: 0px !important;
+    margin: 0.5em 0px 0.5em 0px !important;
+    padding: 0.5em 1em !important;
+    background: var(--ck-blockquote-background-color) !important;
+}
+div.ck-content blockquote:before, div.ck-content blockquote:after {
+    display:none;
+}
+ul {
+	margin-bottom: 0px;
+}
+
+.note-split.type-text a {
+    color: var(--link-color);
+}
+
+/* tab row */
+/* 标签行 */
+.tab-row-widget .note-tab .note-tab-title {
+	text-overflow: initial !important;
+}
+.tab-row-widget .note-tab[active] .note-tab-wrapper {
+	box-shadow: unset !important;
+}
 
 /*Make the notes title box not displaying focus animation*/
 input.note-title:focus{
@@ -352,14 +448,85 @@ input.note-title:focus{
 }
 
 /*text-note code*/
-div.note-detail pre.hljs{
+.note-detail pre.hljs{
 	box-shadow: unset !important;
 }
 .ck.ck-editor__editable .ck-code_selected{
 	background-color: hsla(0,0%,78%,.3) !important;
 }
 
-.attribute-list > div, .inherited-attributes-widget > div{
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
+/*Spacing between the top and bottom of the text block*/
+/*文本块顶部和底部之间的间距*/
+.note-detail .attachment-content-wrapper pre code, .note-detail .ck-content pre code, .note-detail .ck-mermaid__editing-view {
+	padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+}
+
+/*ckeditor*/
+/* ck编辑器*/
+.ck-content hr {
+	height: 2px !important;
+}
+.ck-content .page-break::after {
+    height: 8px;
+    border-top: 2px dashed rgb(196, 196, 196);
+}
+.katex-display {
+    margin-bottom: 1px !important;
+}
+.attachment-content-wrapper pre, .ck-content pre, .ck-mermaid__editing-view {
+	box-shadow: unset !important;
+}
+.ck-widget.table td.ck-editor__nested-editable.ck-editor__nested-editable_focused, .ck-widget.table td.ck-editor__nested-editable:focus, .ck-widget.table th.ck-editor__nested-editable.ck-editor__nested-editable_focused, .ck-widget.table th.ck-editor__nested-editable:focus {
+	background:unset !important;
+    outline:unset !important;
+    outline-offset:unset !important;
+}
+
+/*Right-click menu to quickly open*/
+/* 右键菜单快速打开*/
+body > .dropdown-menu {
+    animation: initial !important;
+}
+.dropdown-menu .dropdown-menu {
+    animation: dropdown-menu-opening 100ms ease-in;
+}
+.note-list-wrapper .note-book-card .note-book-content {
+	font-size: 1rem !important;
+}
+
+/* It can automatically apply a strikethrough to the text following a checked checkbox */
+/*它可以自动对选中复选框后的文本应用删除线*/
+.todo-list__label:has(input:checked) .todo-list__label__description {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* Make formulas selectable */
+/* 使公式可选 */
+.ck-math-tex{
+    user-select:all !important;
+}
+
+/* Disable some animations */
+/* 禁用某些动画 */
+.bx-edit-alt.bx-tada, .bx-edit-alt.bx-lg {
+    animation: none !important;  
+    transition: none !important; 
+}
+.bx-edit-alt.bx-lg {
+    font-size: 150% !important;
+}
+img {
+    transition: none !important;
+}
+
+/* workspace-notes */
+/* 工作空间笔记 */
+.workspace-notes .workspace-icon{
+	font-size: 200% !important;
+}
+
+.ribbon-container {
+    box-shadow: 0 4px 6px -2px var(--main-border-color);
 }
